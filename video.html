@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Y-FETISH | Видео</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<span class="red">Y</span>-FETISH
+
+</div>
+
+<div class="search">
+
+<input type="text" placeholder="Поиск...">
+
+<button>🔍</button>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="video-player">
+
+<video id="video" controls autoplay>
+
+<source id="videoSource" src="videos/demo.mp4" type="video/mp4">
+
+</video>
+
+<h1 id="title">Название видео</h1>
+
+<div class="buttons">
+
+<button id="like">👍 <span id="likes">0</span></button>
+
+<button id="dislike">👎 <span id="dislikes">0</span></button>
+
+</div>
+
+<p id="description">
+
+Описание видео...
+
+</p>
+
+</div>
+
+<div class="sidebar">
+
+<h2>Другие видео</h2>
+
+<div id="videos"></div>
+
+</div>
+
+</div>
+
+<script src="videos.js"></script>
+
+<script>
+
+const params = new URLSearchParams(location.search);
+
+const id = params.get("id") || 0;
+
+const video = videos[id];
+
+if(video){
+
+document.getElementById("videoSource").src = video.file;
+
+document.getElementById("video").load();
+
+document.getElementById("title").innerText = video.title;
+
+document.getElementById("description").innerText = video.description;
+
+}
+
+const list = document.getElementById("videos");
+
+videos.forEach((v,i)=>{
+
+if(i==id) return;
+
+list.innerHTML += `
+
+<div class="card">
+
+<a href="video.html?id=${i}">
+
+<img src="${v.image}">
+
+<h3>${v.title}</h3>
+
+</a>
+
+</div>
+
+`;
+
+});
+
+</script>
+
+</body>
+
+</html>

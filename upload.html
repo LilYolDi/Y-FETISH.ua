@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y-FETISH | Загрузка видео</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.upload-box{
+    max-width:700px;
+    margin:40px auto;
+    background:#181818;
+    padding:30px;
+    border-radius:15px;
+}
+
+.upload-box h1{
+    margin-bottom:25px;
+}
+
+.upload-box input,
+.upload-box textarea{
+    width:100%;
+    margin-bottom:18px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#252525;
+    color:#fff;
+    font-size:16px;
+}
+
+.upload-box textarea{
+    height:140px;
+    resize:none;
+}
+
+.upload-box button{
+    width:100%;
+    padding:16px;
+    background:#e00000;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.upload-box button:hover{
+    background:#ff2020;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+<span class="red">Y</span>-FETISH
+</div>
+
+</header>
+
+<div class="upload-box">
+
+<h1>Загрузить видео</h1>
+
+<input id="title" type="text" placeholder="Название">
+
+<textarea id="description" placeholder="Описание"></textarea>
+
+<label>Видео</label>
+
+<input id="videoFile" type="file" accept="video/*">
+
+<label>Превью</label>
+
+<input id="imageFile" type="file" accept="image/*">
+
+<button onclick="uploadVideo()">
+Опубликовать
+</button>
+
+</div>
+
+<script src="upload.js"></script>
+
+</body>
+</html>
